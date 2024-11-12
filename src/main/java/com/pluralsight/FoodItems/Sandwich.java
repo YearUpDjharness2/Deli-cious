@@ -1,8 +1,10 @@
 package com.pluralsight.FoodItems;
 
+import com.pluralsight.Orders.OrderFood;
+
 import java.util.ArrayList;
 
-public class Sandwich {
+public class Sandwich extends OrderFood {
     public String getSize() {
         return size;
     }
@@ -50,6 +52,7 @@ public class Sandwich {
     private boolean toasted;
 
     public Sandwich(String size, String breadType, String meat, boolean toasted) {
+        super("Sandwich", 0);
         this.size = size;
         this.breadType = breadType;
         this.meat = meat;
@@ -67,11 +70,11 @@ public class Sandwich {
         }
     }
 
+
     public void addTopping(String topping) {
         toppings.add(topping);
     }
 
-    @Override
     public double calculatePrice() {
         double price = getPrice();
 
@@ -80,6 +83,7 @@ public class Sandwich {
 
         return price;
     }
+
 
     @Override
     public String toString() {

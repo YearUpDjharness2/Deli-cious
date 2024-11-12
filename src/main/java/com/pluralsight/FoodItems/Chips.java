@@ -1,8 +1,9 @@
 package com.pluralsight.FoodItems;
 
+import com.pluralsight.Orders.Order;
 import com.pluralsight.Orders.OrderFood;
 
-public class Chips {
+public class Chips extends OrderFood {
 
     // Constructor that sets the name and price for chips
     public Chips(String chipType) {
@@ -25,6 +26,8 @@ public class Chips {
     public String toString() {
         return getName() + ": $" + getPrice();  // Example: "Chips: $1.50"
     }
+
+
 
     // No need for a calculatePrice method because the price is fixed in the constructor and inherited from OrderItem
 }

@@ -16,7 +16,7 @@ public class UserInterface {
 
     // Home screen that offers the user a choice
     public static void displayHomeScreen() {
-        System.out.println("Welcome to DELI-CIOUS Sandwich Shop!");
+        System.out.println("======Welcome to DELI-CIOUS Sandwich Shop!======");
         System.out.println("1. New Order");
         System.out.println("0. Exit");
         int choice = getUserChoice();
@@ -89,7 +89,7 @@ public class UserInterface {
     // Method to add a sandwich to the order
     public static void addSandwich() {
         Sandwich sandwich = createSandwich();  // Create a sandwich using the method
-        currentOrder.addItem(Sandwich);  // Add the sandwich to the order
+        currentOrder.addItem(sandwich);  // Add the sandwich to the order
         System.out.println("Your sandwich has been added.");
         displayOrderScreen();  // Return to the order screen after adding the sandwich
     }
@@ -210,8 +210,6 @@ public class UserInterface {
         // Generate the receipt string (you can format it as needed)
         String receipt = "Your order has been placed!\n" + currentOrder.toString();  // currentOrder.toString() shows the details of the order
 
-        // Save the receipt to a text file
-        ReceiptManager.saveReceipt(receipt);
 
         // Print the receipt to the console as well for verification
         System.out.println(receipt);

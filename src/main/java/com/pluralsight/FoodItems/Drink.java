@@ -1,10 +1,17 @@
 package com.pluralsight.FoodItems;
+import com.pluralsight.Orders.Order;
+import com.pluralsight.FoodItems.Sandwich;
+import com.pluralsight.FoodItems.Chips;
+import com.pluralsight.FoodItems.Drink;
+import com.pluralsight.Orders.OrderFood;
 
-public class Drink { private String size;   // Size of the drink (Small, Medium, Large)
+import java.util.Scanner;
+public class Drink extends OrderFood {
+    private String size;   // Size of the drink (Small, Medium, Large)
     private String flavor; // Flavor of the drink (Cola, Lemonade, Water)
 
     public Drink(String size, String flavor) {
-        super("Drink", 2.50); // Default price for drinks (this is a fallback)
+        super("drink",2.50);
         this.size = size;
         this.flavor = flavor;
         setPriceBasedOnSize(size); // Set price based on size
@@ -13,16 +20,17 @@ public class Drink { private String size;   // Size of the drink (Small, Medium,
     // Set price based on drink size
     private void setPriceBasedOnSize(String size) {
         if (size.equals("Small")) {
-            this.price = 2.00;
+            this.setPrice(2.00);
         } else if (size.equals("Medium")) {
-            this.price = 2.50;
+            this.setPrice(2.50);
         } else if (size.equals("Large")) {
-            this.price = 3.00;
+            this.setPrice(3.00);
         }
     }
 
     @Override
     public double calculatePrice() {
+        double price = 0;
         return price;  // Return the set price based on size
     }
 
