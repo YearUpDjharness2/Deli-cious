@@ -24,10 +24,10 @@ public class UserInterface {
         if (choice == 1) {
             startNewOrder();
         } else if (choice == 0) {
-            System.out.println("Goodbye!");
+            System.out.println("Goodbye!!!!");
             System.exit(0);
         } else {
-            System.out.println("Invalid choice, please try again.");
+            System.out.println("=====Invalid choice, please try again.=====");
             displayHomeScreen();
         }
     }
@@ -40,11 +40,11 @@ public class UserInterface {
 
     // Main order screen
     public static void displayOrderScreen() {
-        System.out.println("Current Order:");
+        System.out.println("===Current Order:===");
         System.out.println(currentOrder);
-        System.out.println("1. Add Sandwich");
-        System.out.println("2. Add Drink");
-        System.out.println("3. Add Chips");
+        System.out.println("===1. Add Sandwich===");
+        System.out.println("===2. Add Drink===");
+        System.out.println("===3. Add Chips===");
         System.out.println("4. Checkout");
         System.out.println("0. Cancel Order");
         int choice = getUserChoice();
