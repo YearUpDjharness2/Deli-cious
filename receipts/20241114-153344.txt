@@ -1,0 +1,11 @@
+--- Your order has been placed! ---
+ -------------- Your Order: -------------
+Sandwich: 12"
+Bread Type: White
+Meat Type: Chicken
+Toasted
+Cheese: American
+Extra Cheese: true
+Extra Meat: Yes
+Toppings: Lettuce Tomato Pickles Onion Mayo Mustard Ketchup Ranch Thousand Islands
+Total: $16.15

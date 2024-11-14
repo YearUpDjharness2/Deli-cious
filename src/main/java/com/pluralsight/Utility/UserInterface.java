@@ -16,7 +16,7 @@ public class UserInterface {
 
     // Home screen that offers the user a choice
     public static void displayHomeScreen() {
-        System.out.println("======Welcome to DELI-CIOUS Sandwich Shop!======");
+        System.out.println("====== Welcome to DELI-CIOUS! ======");
         System.out.println("To Start a New Order Press (1)");
         System.out.println("Press (0) to Exit");
         int choice = getUserChoice();
@@ -32,7 +32,7 @@ public class UserInterface {
         }
     }
     public static void startNewOrder() {
-        currentOrder = new Order();  // Reset the order
+        currentOrder = new Order();
         displayOrderScreen();
     }
     public static void displayOrderScreen() {
@@ -84,6 +84,15 @@ public class UserInterface {
         displayOrderScreen();
     }
     public static Sandwich createSandwich() {
+        System.out.println("Select sandwich size:");
+        System.out.println("1.) 4\" ($5.50)\n2.) 8\" ($7.00)\n3.) 12\" ($8.50)");
+        int sizeChoice = getUserChoice();
+        String size = switch (sizeChoice) {
+            case 1 -> "4\"";
+            case 2 -> "8\"";
+            case 3 -> "12\"";
+            default -> "8\"";
+        };
         System.out.println("--- Select bread type: ---");
         System.out.println("1.) White\n2.) Wheat\n3.) Rye\n4.) Wrap");
         int breadChoice = getUserChoice();
@@ -94,16 +103,8 @@ public class UserInterface {
             case 4 -> "Wrap";
             default -> "White";
         };
-        System.out.println("Select sandwich size:");
-        System.out.println("1.) 4\" ($5.50)\n2.) 8\" ($7.00)\n3.) 12\" ($8.50)");
-        int sizeChoice = getUserChoice();
-        String size = switch (sizeChoice) {
-            case 1 -> "4\"";
-            case 2 -> "8\"";
-            case 3 -> "12\"";
-            default -> "8\"";
-        };
-        System.out.println("--- Select your meat: ---");
+
+        System.out.println("--- Select your meat: (4inch +$1.00, 8inch +$2.00, 12inch +$3.00) ---");
         System.out.println("1.) Turkey\n2.) Chicken\n3.) Ham\n4.) Roast Beef\n5.) Veggie");
         int meatChoice = getUserChoice();
         String meat = switch (meatChoice) {
@@ -120,13 +121,13 @@ public class UserInterface {
         boolean toasted = toastedChoice == 1;
         Sandwich sandwich = new Sandwich(size, bread, meat, toasted);
 
-    // Handle extra meat
-        System.out.println("Do you want extra meat?");
+
+        System.out.println("Do you want extra meat? (4inch +$.50, 8inch +$1.00, 12inch +$1.50)");
         System.out.println("1. Yes\n2. No");
     int extraMeatChoice = getUserChoice();
         sandwich.setExtraMeat(extraMeatChoice == 1);
 
-    // Handle cheese
+
         System.out.println("Select cheese type (or select (0) for no cheese):");
         System.out.println("1. American\n2. Provolone\n3. Cheddar\n4. Swiss\n0. No Cheese");
     int cheeseChoice = getUserChoice();
@@ -141,8 +142,8 @@ public class UserInterface {
         sandwich.setCheese(cheese);
     }
 
-    // Handle extra cheese
-        System.out.println("Do you want extra cheese?");
+
+        System.out.println("Do you want extra cheese? (4inch +$.30, 8inch +$.60, 12inch +$.90)");
         System.out.println("1.) Yes\n2.) No");
     int extraCheeseChoice = getUserChoice();
         sandwich.setExtraCheese(extraCheeseChoice == 1);
@@ -152,21 +153,20 @@ public class UserInterface {
 }
     public static void addToppings(Sandwich sandwich) {
         System.out.println("--- Select toppings & Sauces --- (press (0) to stop)");
-        System.out.println(" TOPPINGS:\n 1.) Cheese\n2.) Lettuce\n3.) Tomato\n4.) Pickles\n5.) Onion\n SAUCES:\n" +
-                "6.)Mayo\n7.)Mustard\n8.)Ketchup\n9.)Ranch\n10.)Thousand Island\n ");
+        System.out.println("TOPPINGS:\n1.)Lettuce\n2.)Tomato\n3.)Pickles\n4.)Onion\nSAUCES:\n" +
+                "5.)Mayo\n6.)Mustard\n7.)Ketchup\n8.)Ranch\n9.)Thousand Island\n ");
         int toppingChoice;
         while ((toppingChoice = getUserChoice()) != 0) {
             switch (toppingChoice) {
-                case 1 -> sandwich.addTopping("Cheese");
-                case 2 -> sandwich.addTopping("Lettuce");
-                case 3 -> sandwich.addTopping("Tomato");
-                case 4 -> sandwich.addTopping("Pickles");
-                case 5 -> sandwich.addTopping("Onion");
-                case 6 -> sandwich.addTopping("Mayo");
-                case 7 -> sandwich.addTopping("Mustard");
-                case 8 -> sandwich.addTopping("Ketchup");
-                case 9 -> sandwich.addTopping("Ranch");
-                case 10-> sandwich.addTopping("Thousand Islands");
+                case 1 -> sandwich.addTopping("Lettuce");
+                case 2 -> sandwich.addTopping("Tomato");
+                case 3 -> sandwich.addTopping("Pickles");
+                case 4 -> sandwich.addTopping("Onion");
+                case 5 -> sandwich.addTopping("Mayo");
+                case 6 -> sandwich.addTopping("Mustard");
+                case 7 -> sandwich.addTopping("Ketchup");
+                case 8 -> sandwich.addTopping("Ranch");
+                case 9-> sandwich.addTopping("Thousand Islands");
                 default -> System.out.println("Invalid choice.");
             }
             System.out.println("Add another topping or press (0) to stop");
@@ -176,7 +176,7 @@ public class UserInterface {
 
     public static void addDrink() {
         System.out.println("--- Select drink size: ---");
-        System.out.println("1.) Small\n2.) Medium\n3.) Large");
+        System.out.println("1.) Small($2.00)\n2.) Medium($2.50)\n3.) Large($3.00)");
         int sizeChoice = getUserChoice();
         String size = switch (sizeChoice) {
             case 1 -> "Small";
@@ -199,7 +199,7 @@ public class UserInterface {
         displayOrderScreen();
     }
     public static void addChips() {
-        System.out.println("--- Select chip type: ---");
+        System.out.println("--- Select chip type: ($1.50) ---");
         System.out.println("1.) Plain\n2.) Kettle-Cooked\n3.) BBQ");
         int chipChoice = getUserChoice();
         String chipType = switch (chipChoice) {

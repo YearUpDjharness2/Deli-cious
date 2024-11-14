@@ -32,11 +32,11 @@ public class Order {
     @Override
     public String toString() {
         StringBuilder orderSummary = new StringBuilder();
-        orderSummary.append("Your Order:\n");
+        orderSummary.append(" -------------- Your Order: -------------\n");
         for (OrderFood item : items) {
             orderSummary.append(item.toString()).append("\n"); // Prints each item's details
         }
-        orderSummary.append("Total: $").append(calculateTotal()); // Adds the total price
+        orderSummary.append("---------------Total: $").append(calculateTotal()).append(" ---------------"); // Adds the total price
         return orderSummary.toString();
     }
 

@@ -1,0 +1,8 @@
+--- Your order has been placed! ---
+Your Order:
+Sandwich: 12"  Bread Type: White  Meat Type: Ham ,Toasted
+Cheese: American
+Extra Meat: Yes
+Toppings: Lettuce Tomato Pickles Onion Mayo Mustard Ketchup Ranch Thousand Islands
+Chips: $1.5
+Total: $15.25

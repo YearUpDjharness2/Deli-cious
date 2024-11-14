@@ -9,21 +9,19 @@ import java.time.format.DateTimeFormatter;
 
 public class Receipts {
 
-    // Method to save the receipt to a file in the "receipts" directory
     public static void saveReceipt(String receipt) {
         // Ensure the receipts directory exists
         File directory = new File("receipts");
         if (!directory.exists()) {
-            directory.mkdir(); // Create the receipts directory if it doesn't exist
+            directory.mkdir();
         }
 
-        // Generate a unique filename based on the current date and time
-        String filename = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HH:mm:ss")) + ".txt";
 
-        // Try writing the receipt to the file
+        String filename = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss")) + ".txt";
+
         try (FileWriter writer = new FileWriter(new File(directory, filename))) {
             writer.write(receipt); // Write the receipt to the file
-            System.out.println("Receipt saved as " + filename); // Inform the user about the saved receipt
+            System.out.println("-------------Receipt saved as " + filename + "--------------"); // Inform the user about the saved receipt
         } catch (IOException e) {
             System.out.println("An error occurred while saving the receipt: " + e.getMessage());
         }
