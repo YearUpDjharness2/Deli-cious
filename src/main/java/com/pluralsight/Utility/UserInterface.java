@@ -38,11 +38,11 @@ public class UserInterface {
     public static void displayOrderScreen() {
         System.out.println("===Current Order:===");
         System.out.println(currentOrder);
-        System.out.println("=== 1. Add Sandwich ===");
-        System.out.println("=== 2. Add Drink ===");
-        System.out.println("=== 3. Add Chips ===");
-        System.out.println("=== 4. Checkout ===");
-        System.out.println("=== 0. Cancel Order ===");
+        System.out.println("=== 1.) Add Sandwich ===");
+        System.out.println("=== 2.) Add Drink ===");
+        System.out.println("=== 3.) Add Chips ===");
+        System.out.println("=== 4.) Checkout ===");
+        System.out.println("=== 0.) Cancel Order ===");
         int choice = getUserChoice();
         switch (choice) {
             case 1:
@@ -127,7 +127,7 @@ public class UserInterface {
         sandwich.setExtraMeat(extraMeatChoice == 1);
 
     // Handle cheese
-        System.out.println("Select cheese type (or select 0 for no cheese):");
+        System.out.println("Select cheese type (or select (0) for no cheese):");
         System.out.println("1. American\n2. Provolone\n3. Cheddar\n4. Swiss\n0. No Cheese");
     int cheeseChoice = getUserChoice();
         if (cheeseChoice != 0) {
@@ -143,7 +143,7 @@ public class UserInterface {
 
     // Handle extra cheese
         System.out.println("Do you want extra cheese?");
-        System.out.println("1. Yes\n2. No");
+        System.out.println("1.) Yes\n2.) No");
     int extraCheeseChoice = getUserChoice();
         sandwich.setExtraCheese(extraCheeseChoice == 1);
 
@@ -151,8 +151,8 @@ public class UserInterface {
         return sandwich;
 }
     public static void addToppings(Sandwich sandwich) {
-        System.out.println("--- Select toppings & Sauces --- (press 0 to stop)");
-        System.out.println("1.) Cheese\n2.) Lettuce\n3.) Tomato\n4.) Pickles\n5.) Onion\n SAUCES:\n" +
+        System.out.println("--- Select toppings & Sauces --- (press (0) to stop)");
+        System.out.println(" TOPPINGS:\n 1.) Cheese\n2.) Lettuce\n3.) Tomato\n4.) Pickles\n5.) Onion\n SAUCES:\n" +
                 "6.)Mayo\n7.)Mustard\n8.)Ketchup\n9.)Ranch\n10.)Thousand Island\n ");
         int toppingChoice;
         while ((toppingChoice = getUserChoice()) != 0) {
@@ -185,13 +185,13 @@ public class UserInterface {
             default -> "Medium";
         };
         System.out.println("--- Select flavor: ---");
-        System.out.println("1.) Cola\n2.) Lemonade\n3.) Water");
+        System.out.println("1.) Coca-Cola\n2.) Lemonade\n3.) Water");
         int flavorChoice = getUserChoice();
         String flavor = switch (flavorChoice) {
-            case 1 -> "Cola";
+            case 1 -> "Coca-Cola";
             case 2 -> "Lemonade";
             case 3 -> "Water";
-            default -> "Cola";
+            default -> "Coca-Cola";
         };
         Drink drink = new Drink(size, flavor);
         currentOrder.addItem(drink);
@@ -200,11 +200,11 @@ public class UserInterface {
     }
     public static void addChips() {
         System.out.println("--- Select chip type: ---");
-        System.out.println("1.) Plain\n2.) Salted\n3.) BBQ");
+        System.out.println("1.) Plain\n2.) Kettle-Cooked\n3.) BBQ");
         int chipChoice = getUserChoice();
         String chipType = switch (chipChoice) {
             case 1 -> "Plain";
-            case 2 -> "Salted";
+            case 2 -> "Kettle-Cooked";
             case 3 -> "BBQ";
             default -> "Plain";
         };
