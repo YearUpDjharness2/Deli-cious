@@ -1,0 +1,14 @@
+--- Your order has been placed! ---
+Your Order:
+Sandwich: 12" White bread, Chicken meat, Not Toasted
+Cheese: Cheddar
+Toppings: Cheese Lettuce Tomato Mayo Mustard Ketchup
+Sandwich: 8" Wrap bread, Turkey meat, Not Toasted
+Cheese: Provolone
+Toppings: Cheese Lettuce Tomato Mayo Mustard Ketchup Ranch Thousand Islands
+drink: $3.0
+Size: Large
+Flavor: Lemonade
+Price: $0.0
+Chips: $1.5
+Total: $24.25

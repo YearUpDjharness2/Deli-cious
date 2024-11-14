@@ -38,4 +38,7 @@ public abstract class OrderFood {
     public String toString() {
         return name + ": $" + price;
     }
+
+    public void addSauce() {
+    }
 }

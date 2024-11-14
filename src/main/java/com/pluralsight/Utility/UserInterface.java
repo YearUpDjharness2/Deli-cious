@@ -119,12 +119,41 @@ public class UserInterface {
         int toastedChoice = getUserChoice();
         boolean toasted = toastedChoice == 1;
         Sandwich sandwich = new Sandwich(size, bread, meat, toasted);
-        addToppings(sandwich);
-        return sandwich;
+
+    // Handle extra meat
+        System.out.println("Do you want extra meat?");
+        System.out.println("1. Yes\n2. No");
+    int extraMeatChoice = getUserChoice();
+        sandwich.setExtraMeat(extraMeatChoice == 1);
+
+    // Handle cheese
+        System.out.println("Select cheese type (or select 0 for no cheese):");
+        System.out.println("1. American\n2. Provolone\n3. Cheddar\n4. Swiss\n0. No Cheese");
+    int cheeseChoice = getUserChoice();
+        if (cheeseChoice != 0) {
+        String cheese = switch (cheeseChoice) {
+            case 1 -> "American";
+            case 2 -> "Provolone";
+            case 3 -> "Cheddar";
+            case 4 -> "Swiss";
+            default -> "American";
+        };
+        sandwich.setCheese(cheese);
     }
+
+    // Handle extra cheese
+        System.out.println("Do you want extra cheese?");
+        System.out.println("1. Yes\n2. No");
+    int extraCheeseChoice = getUserChoice();
+        sandwich.setExtraCheese(extraCheeseChoice == 1);
+
+    addToppings(sandwich);
+        return sandwich;
+}
     public static void addToppings(Sandwich sandwich) {
-        System.out.println("--- Select toppings (press 0 to stop): ---");
-        System.out.println("1.) Cheese\n2.) Lettuce\n3.) Tomato\n4.) Pickles\n5.) Onion");
+        System.out.println("--- Select toppings & Sauces --- (press 0 to stop)");
+        System.out.println("1.) Cheese\n2.) Lettuce\n3.) Tomato\n4.) Pickles\n5.) Onion\n SAUCES:\n" +
+                "6.)Mayo\n7.)Mustard\n8.)Ketchup\n9.)Ranch\n10.)Thousand Island\n ");
         int toppingChoice;
         while ((toppingChoice = getUserChoice()) != 0) {
             switch (toppingChoice) {
@@ -133,11 +162,18 @@ public class UserInterface {
                 case 3 -> sandwich.addTopping("Tomato");
                 case 4 -> sandwich.addTopping("Pickles");
                 case 5 -> sandwich.addTopping("Onion");
+                case 6 -> sandwich.addTopping("Mayo");
+                case 7 -> sandwich.addTopping("Mustard");
+                case 8 -> sandwich.addTopping("Ketchup");
+                case 9 -> sandwich.addTopping("Ranch");
+                case 10-> sandwich.addTopping("Thousand Islands");
                 default -> System.out.println("Invalid choice.");
             }
-            System.out.println("Add another topping or press 0 to stop.");
+            System.out.println("Add another topping or press (0) to stop");
         }
     }
+
+
     public static void addDrink() {
         System.out.println("--- Select drink size: ---");
         System.out.println("1.) Small\n2.) Medium\n3.) Large");
@@ -177,8 +213,10 @@ public class UserInterface {
         System.out.println("Your chips have been added.");
         displayOrderScreen();
     }
+
     public static void checkout() {
         String receipt = "--- Your order has been placed! ---\n" + currentOrder.toString();
+        Receipts.saveReceipt(receipt);
         System.out.println(receipt);
     }
     public static void cancelOrder() {

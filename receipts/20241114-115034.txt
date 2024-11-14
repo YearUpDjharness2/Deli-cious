@@ -1,0 +1,6 @@
+--- Your order has been placed! ---
+Your Order:
+Sandwich: 12" White bread, Turkey meat, Not Toasted
+Cheese: Cheddar
+Toppings: Mayo Mustard Ketchup Ranch Thousand Islands
+Total: $13.75

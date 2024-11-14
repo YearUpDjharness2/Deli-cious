@@ -1,0 +1,6 @@
+--- Your order has been placed! ---
+Your Order:
+Sandwich: 12" White bread, Chicken meat, Not Toasted
+Cheese: Cheddar
+Toppings: Cheese Lettuce Tomato Mayo Mustard Ketchup
+Total: $13.75
