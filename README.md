@@ -9,7 +9,8 @@ This application takes full advantage of Object Oriented Analysis and
 Design Create classes and interfaces as necessary to build this solution.
 
 # Code Summary
-The Main class starts the program and calls UserInterface.displayHomeScreen(),
+## The Main class
+The Main Class starts the program and calls UserInterface.displayHomeScreen(),
 which shows a menu and processes the user's choice, such as creating a sandwich or exiting.
 
 
