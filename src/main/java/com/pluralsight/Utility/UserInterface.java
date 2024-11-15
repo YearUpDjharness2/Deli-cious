@@ -1,25 +1,20 @@
 package com.pluralsight.Utility;
-
 import com.pluralsight.Orders.Order;
 import com.pluralsight.FoodItems.Sandwich;
 import com.pluralsight.FoodItems.Chips;
 import com.pluralsight.FoodItems.Drink;
 import java.util.Scanner;
-
 public class UserInterface {
     private static Scanner scanner = new Scanner(System.in);
     private static Order currentOrder = new Order();
-
     public static void main(String[] args) {
         displayHomeScreen();
     }
-
     public static void displayHomeScreen() {
         System.out.println("====== Welcome to DELI-CIOUS! ======");
         System.out.println("To Start a New Order Press (1)");
         System.out.println("Press (0) to Exit");
         int choice = getUserChoice();
-
         if (choice == 1) {
             startNewOrder();
         } else if (choice == 0) {
@@ -102,7 +97,6 @@ public class UserInterface {
             case 4 -> "Wrap";
             default -> "White";
         };
-
         System.out.println("--- Select your meat: (4inch +$1.00, 8inch +$2.00, 12inch +$3.00) ---");
         System.out.println("1.) Turkey\n2.) Chicken\n3.) Ham\n4.) Roast Beef\n5.) Veggie");
         int meatChoice = getUserChoice();
@@ -146,7 +140,6 @@ public class UserInterface {
         System.out.println("1.) Yes\n2.) No");
     int extraCheeseChoice = getUserChoice();
         sandwich.setExtraCheese(extraCheeseChoice == 1);
-
     addToppings(sandwich);
         return sandwich;
 }
@@ -171,8 +164,6 @@ public class UserInterface {
             System.out.println("Add another topping or press (0) to stop");
         }
     }
-
-
     public static void addDrink() {
         System.out.println("--- Select drink size: ---");
         System.out.println("1.) Small($2.00)\n2.) Medium($2.50)\n3.) Large($3.00)");
@@ -212,7 +203,6 @@ public class UserInterface {
         System.out.println("Your chips have been added.");
         displayOrderScreen();
     }
-
     public static void checkout() {
         String receipt = "--- Your order has been placed! ---\n" + currentOrder.toString();
         Receipts.saveReceipt(receipt);
