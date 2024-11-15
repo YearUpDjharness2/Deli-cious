@@ -17,7 +17,7 @@ which shows a menu and processes the user's choice, such as creating a sandwich 
 
 
 ## The UserInterface
- The UserInterface class serves as the main entry point for an interactive sandwich shop ordering system.
+The UserInterface class serves as the main entry point for an interactive sandwich shop ordering system.
 It guides users through creating a new order, adding sandwiches, drinks, and chips, and customizing items with options like size, toppings, and flavors.
 Users can view their current order, calculate the total cost, and save a receipt at checkout. The class, handles invalid inputs, and 
 integrates with other components like Order and Receipts.
