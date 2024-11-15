@@ -1,0 +1,16 @@
+--- Your order has been placed! ---
+ -------------- Your Order: -------------
+Sandwich: 4"
+Bread Type: White
+Meat Type: Chicken
+Toasted
+Cheese: American
+Extra Cheese: true
+Extra Meat: Yes
+Toppings: Lettuce Tomato Pickles Onion Mayo Mustard Ketchup Ranch Thousand Islands
+drink: $2.0
+Size: Small
+Flavor: Coca-Cola
+Price: $0.0
+Chips: $1.5
+---------------Total: $8.05 ---------------

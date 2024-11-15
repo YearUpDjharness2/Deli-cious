@@ -4,20 +4,16 @@ import com.pluralsight.FoodItems.Sandwich;
 import com.pluralsight.FoodItems.Chips;
 import com.pluralsight.FoodItems.Drink;
 import com.pluralsight.Orders.OrderFood;
-
 import java.util.Scanner;
 public class Drink extends OrderFood {
-    private String size;   // Size of the drink (Small, Medium, Large)
-    private String flavor; // Flavor of the drink (Cola, Lemonade, Water)
-
+    private String size;
+    private String flavor;
     public Drink(String size, String flavor) {
-        super("drink",2.50);
+        super("Drink",2.50);
         this.size = size;
         this.flavor = flavor;
-        setPriceBasedOnSize(size); // Set price based on size
+        setPriceBasedOnSize(size);
     }
-
-    // Set price based on drink size
     private void setPriceBasedOnSize(String size) {
         if (size.equals("Small")) {
             this.setPrice(2.00);
@@ -27,32 +23,25 @@ public class Drink extends OrderFood {
             this.setPrice(3.00);
         }
     }
-
     @Override
     public double calculatePrice() {
         double price = 0;
-        return price;  // Return the set price based on size
+        return price;
     }
-
     @Override
     public String toString() {
         return super.toString() + "\nSize: " + size + "\nFlavor: " + flavor + "\nPrice: $" + calculatePrice();
     }
-
-    // Getters and setters for the fields
     public String getSize() {
         return size;
     }
-
     public void setSize(String size) {
         this.size = size;
-        setPriceBasedOnSize(size); // Update price when size changes
+        setPriceBasedOnSize(size);
     }
-
     public String getFlavor() {
         return flavor;
     }
-
     public void setFlavor(String flavor) {
         this.flavor = flavor;
     }

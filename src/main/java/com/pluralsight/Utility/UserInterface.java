@@ -14,7 +14,6 @@ public class UserInterface {
         displayHomeScreen();
     }
 
-    // Home screen that offers the user a choice
     public static void displayHomeScreen() {
         System.out.println("====== Welcome to DELI-CIOUS! ======");
         System.out.println("To Start a New Order Press (1)");
