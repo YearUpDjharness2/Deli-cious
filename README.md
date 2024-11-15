@@ -1,6 +1,6 @@
 # Deli-cious
 This project is the POS application for DELI-cious, a custom sandwich
-shop. Currently at DELI-cious our customers can fully customize their sandwich
+shop. Currently at DELI-cious customers can fully customize their sandwich
 orders. Until recently they have been managing all orders in person and are
 currently taking all orders on paper. But the business is growing, and need a
 way to automate the order process (and eventually even make it available
