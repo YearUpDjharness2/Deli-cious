@@ -8,6 +8,8 @@ online).
 This application takes full advantage of Object Oriented Analysis and
 Design Create classes and interfaces as necessary to build this solution.
 
+ ![image](https://129757024.cdn6.editmysite.com/uploads/1/2/9/7/129757024/s841251545676646705_p36_i1_w399.png)
+
 # Code Summary
 ## The Main class
 The Main Class starts the program and calls UserInterface.displayHomeScreen(),
